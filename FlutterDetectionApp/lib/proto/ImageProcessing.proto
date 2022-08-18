@@ -1,0 +1,17 @@
+
+syntax = "proto3";
+
+service ImageProcessing {
+    rpc Predict (PredictionRequest) returns (PredictionResult);
+}
+
+message PredictionRequest {
+    bytes image_array = 1;
+    string file_extension = 2;
+    string file_name = 3;
+}
+
+message PredictionResult {
+    string detected_image = 1;
+}
+
